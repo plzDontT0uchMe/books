@@ -24,6 +24,7 @@ func Run(cfg *config.Config) error {
 	defer cancel()
 
 	listener, errListen := net.Listen("tcp", cfg.Port)
+	fmt.Printf("asdads")
 	if errListen != nil {
 		return fmt.Errorf("listen error: %w", errListen)
 	}
