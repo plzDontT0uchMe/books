@@ -23,7 +23,7 @@ func Run(cfg *config.Config) error {
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer cancel()
 
-	listener, errListen := net.Listen("tcp", cfg.Address)
+	listener, errListen := net.Listen("tcp", fmt.Sprintf(":%d", cfg.Port))
 	if errListen != nil {
 		return fmt.Errorf("listen error: %w", errListen)
 	}
