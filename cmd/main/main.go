@@ -23,6 +23,8 @@ func main() {
 	t := dto.Test{ID: 1}
 	fmt.Println(t)
 
+	fmt.Println("Lol")
+
 	if err = logger.MustLoad(cfg.Environment); err != nil {
 		fmt.Printf("logger load error: %s", err)
 		os.Exit(1)
