@@ -6,6 +6,7 @@ import (
 
 	"backend/go/books/internal/app"
 	"backend/go/books/internal/config"
+	"backend/go/books/internal/dto"
 	"backend/go/books/pkg/logger"
 )
 
@@ -18,6 +19,9 @@ func main() {
 		fmt.Printf("config load error: %s", err)
 		os.Exit(1)
 	}
+
+	t := dto.Test{ID: 1}
+	fmt.Println(t)
 
 	if err = logger.MustLoad(cfg.Environment); err != nil {
 		fmt.Printf("logger load error: %s", err)
